@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BİLSEM Sınav Motoru</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Portrait mode blocker -->
+    <div id="portrait-blocker">
+        <div class="blocker-content">
+            <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+            <h2>Lütfen Cihazınızı Yan Çevirin</h2>
+            <p>Bu sınav sadece yatay (landscape) modda çalışmaktadır.</p>
+        </div>
+    </div>
+
+    <!-- Main Menu -->
+    <div id="main-menu">
+        <h1>BİLSEM HAZIRLIK</h1>
+        <p>12 Farklı Kategori • 1200 Benzersiz Soru</p>
+        
+        <button class="menu-btn primary" onclick="startExam()">🏆 Karma Sınava Başla (60 Soru)</button>
+        
+        <div class="menu-divider">VEYA KATEGORİ SEÇİP ÇALIŞ</div>
+        
+        <div class="category-grid" id="category-menu-grid">
+            <!-- Dynamically populated by JS -->
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="app-container" class="hidden">
+        <!-- Progress Bar -->
+        <div id="progress-bar">
+            <div id="progress-fill"></div>
+        </div>
+
+        <!-- Timer Bar -->
+        <div id="timer-bar">
+            <div id="timer-fill"></div>
+        </div>
+
+        <!-- Question Area -->
+        <div id="question-container">
+            <!-- Question content injected by JS -->
+        </div>
+
+        <!-- Options Area -->
+        <div id="options-container">
+            <!-- Options injected by JS -->
+        </div>
+    </div>
+
+    <!-- Completion Screen -->
+    <div id="completion-screen" class="hidden">
+        <div class="completion-content">
+            <h2>Sınav Tamamlandı</h2>
+            <p>Sonuçlarınız kaydedildi.</p>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
